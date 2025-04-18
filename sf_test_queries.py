@@ -32,12 +32,12 @@ print("Generated SQL:")
 print(create_sql)
 
 conn = snowflake.connector.connect(
-    user='SAURABHSAKPAL2025',
-    password='SaurabhSakpal2025',
-    account='splftvy-sm60395',  # e.g., abcd1234.east-us-2.azure
-    warehouse='saurabhswarehouse',
-    database='saurabhsdb',
-    schema='goldschema'
+    user='',
+    password='',
+    account=-',  # e.g., abcd1234.east-us-2.azure
+    warehouse='',
+    database='',
+    schema=''
 )
 
 cur = conn.cursor()
