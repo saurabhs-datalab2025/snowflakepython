@@ -1,0 +1,14 @@
+{
+  "table_name": "employees2",
+  "database_name": "",
+  "schema_name": "",
+  "columns": {
+    "employee_id": "INT",
+    "first_name": "STRING",
+    "last_name": "STRING",
+    "email": "STRING",
+    "department": "STRING",
+    "hire_date": "DATE",
+    "salary": "NUMBER(10,2)"
+  }
+}
