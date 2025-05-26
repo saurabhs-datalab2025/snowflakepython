@@ -1,6 +1,6 @@
 import json
 
-class TableCreator:
+class StageCreator:
     def __init__(self, schema_path: str):
         with open(schema_path, "r") as f:
             self.schema = json.load(f)

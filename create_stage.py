@@ -1,7 +1,6 @@
 import sys
 import os
 from snowflake_etl.snowflake_connection import SnowflakeConnector
-from snowflake_etl.table_creator import TableCreator
 
 if len(sys.argv) < 2:
     print("Usage: python create_table.py schemas/table_schema.json")
@@ -19,7 +18,7 @@ sf = SnowflakeConnector(config_path)
 conn = sf.connect()
 cur = conn.cursor()
 
-# Create table
+# Create stage
 creator = TableCreator(schema_path)
 creator.create_table(cur)
 
