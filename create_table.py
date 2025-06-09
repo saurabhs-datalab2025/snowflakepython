@@ -23,11 +23,6 @@ cur = conn.cursor()
 creator = TableCreator(schema_path)
 creator.create_table(cur)
 
-# Create stage
-
-
-
-
 
 # Clean up
 cur.close()

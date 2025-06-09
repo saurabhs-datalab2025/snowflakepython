@@ -1,13 +1,6 @@
 {
-  "integration_name": "employees2",
-  "type": "",
-  "storage_provider": "",
-  "enabled": "employees2",
-  "azure_tenant_id": "",
-  "storage_allowed_locations": "",
-  "stage_name": "",
-  "url":"",
-  "file_format":""
- 
+  "stage_name": "my_azure_stage",
+  "integration_name": "azure_integration",
+  "stage_url": "'azure://pythonprojectsaurabh.blob.core.windows.net/pythonproject/'",
+  "file_format": "fileformat_azure"
   }
-
