@@ -10,10 +10,11 @@ class SnowflakeConnector:
     def connect(self):
         self.conn = snowflake.connector.connect(
             user=self.config["user"],
-            password=self.config["password"],
+            authenticator='SNOWFLAKE_JWT',
             account=self.config["account"],
             warehouse=self.config["warehouse"],
             database=self.config["database"],
+            private_key_file=self.config["private_key_path"],
             schema=self.config["schema"]
         )
         return self.conn

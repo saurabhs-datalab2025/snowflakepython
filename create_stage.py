@@ -19,6 +19,7 @@ sf = SnowflakeConnector(config_path)
 conn = sf.connect()
 cur = conn.cursor()
 
+
 # Create stage
 creator = StageCreator(schema_path)
 creator.create_stage(cur)
