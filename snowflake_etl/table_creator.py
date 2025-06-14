@@ -5,6 +5,7 @@ class TableCreator:
         with open(schema_path, "r") as f:
             self.schema = json.load(f)
             self.table_name = self.schema["table_name"]
+            self.schema_name = self.schema["schema_name"]
             self.columns = self.schema["columns"]
 
     def build_create_sql(self) -> str:

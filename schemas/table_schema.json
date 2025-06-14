@@ -1,7 +1,7 @@
 {
-  "table_name": "employees3",
+  "table_name": "tablejune14",
   "database_name": "",
-  "schema_name": "",
+  "schema_name": "goldschema",
   "columns": {
     "employee_id": "INT",
     "first_name": "STRING",
