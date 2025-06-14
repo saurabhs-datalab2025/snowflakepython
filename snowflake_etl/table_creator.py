@@ -4,8 +4,9 @@ class TableCreator:
     def __init__(self, schema_path: str):
         with open(schema_path, "r") as f:
             self.schema = json.load(f)
-        self.table_name = self.schema["table_name"]
-        self.columns = self.schema["columns"]
+            self.table_name = self.schema["table_name"]
+            self.schema_name = self.schema["schema_name"]
+            self.columns = self.schema["columns"]
 
     def build_create_sql(self) -> str:
         cols = ",\n  ".join([f"{col} {dtype}" for col, dtype in self.columns.items()])

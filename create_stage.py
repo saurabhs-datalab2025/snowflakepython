@@ -1,10 +1,10 @@
 import sys
 import os
 from snowflake_etl.snowflake_connection import SnowflakeConnector
-from snowflake_etl.table_creator import TableCreator
+from snowflake_etl.stage_creator import StageCreator
 
 if len(sys.argv) < 2:
-    print("Usage: python create_table.py schemas/table_schema.json")
+    print("Usage: python create_stage.py entities/stage_schema.json")
     sys.exit(1)
 
 schema_path = sys.argv[1]
@@ -19,9 +19,10 @@ sf = SnowflakeConnector(config_path)
 conn = sf.connect()
 cur = conn.cursor()
 
-# Create table
-creator = TableCreator(schema_path)
-creator.create_table(cur)
+
+# Create stage
+creator = StageCreator(schema_path)
+creator.create_stage(cur)
 
 
 # Clean up

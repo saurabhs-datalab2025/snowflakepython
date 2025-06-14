@@ -1,9 +1,9 @@
 {
-  "user": "SAURABHSAKPAL2025",
-  "password": "SaurabhSakpal2025",
+  "user": "user1",
   "account": "splftvy-sm60395",
   "warehouse": "saurabhswarehouse",
   "database": "saurabhsdb",
-  "schema": "goldschema"
+  "schema": "goldschema",
+  "private_key_path": "C:/Users/saura/OneDrive/Desktop/keys/rsa_key.p8"
 }
 

@@ -1,0 +1,6 @@
+{
+  "stage_name": "my_azure_stage",
+  "integration_name": "azure_integration",
+  "stage_url": "'azure://pythonprojectsaurabh.blob.core.windows.net/pythonproject/'",
+  "file_format": "fileformat_azure"
+  }

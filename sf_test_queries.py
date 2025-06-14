@@ -34,7 +34,7 @@ print(create_sql)
 conn = snowflake.connector.connect(
     user='',
     password='',
-    account=-',  # e.g., abcd1234.east-us-2.azure
+    account=-'',
     warehouse='',
     database='',
     schema=''
