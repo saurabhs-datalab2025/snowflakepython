@@ -2,5 +2,13 @@
   "stage_name": "my_azure_stage",
   "integration_name": "azure_integration",
   "stage_url": "'azure://pythonprojectsaurabh.blob.core.windows.net/pythonproject/'",
-  "file_format": "fileformat_azure"
+  "file_format": "fileformat_azure",
+  "file_type": "CSV",
+  "delimiter": "','",
+  "skip_header": "1",
+  "storage_provider": "'AZURE'",
+  "integration_type": "external_stage",
+  "enabled": "true",
+  "azure_tenant_id": "'a714bdf9-e8a4-455a-ba5b-4dc1ed20d829'",
+  "storage_allowed_locations":"('azure://pythonprojectsaurabh.blob.core.windows.net/pythonproject/')"
   }
