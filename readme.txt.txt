@@ -31,3 +31,16 @@ GRANT OWNERSHIP ON STORAGE INTEGRATION your_integration TO ROLE your_role REVOKE
 
 GRANT USAGE ON INTEGRATION AZURE_INTEGRATION TO ROLE snowflakepythonuser;
 
+Directory to Store snowflake_keys:
+mkdir 
+~/.snowflake_keys/
+
+Activate Python Environment:
+
+python3 -m venv venv 
+source venv/bin/activate
+pip install snowflake-connector-python
+python3 create_table.py schemas/table_schema.json
+deactivate at the end of the session
+
+

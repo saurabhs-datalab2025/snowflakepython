@@ -4,6 +4,6 @@
   "warehouse": "saurabhswarehouse",
   "database": "saurabhsdb",
   "schema": "goldschema",
-  "private_key_path": "C:/Users/saura/OneDrive/Desktop/keys/rsa_key.p8"
+  "private_key_path": "/Users/saurabhsakpal2025/.snowflake_keys/rsa_key.p8"
 }
 
