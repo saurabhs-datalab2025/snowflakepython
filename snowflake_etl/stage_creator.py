@@ -8,23 +8,7 @@ class StageCreator:
             self.integration_name = self.schema["integration_name"]
             self.stage_url = self.schema["stage_url"]
             self.file_format = self.schema["file_format"]
-            self.file_type = self.schema["file_type"]
-            self.delimiter = self.schema["delimiter"]
-            self.skip_header = self.schema["skip_header"]
-            self.storage_provider = self.schema["storage_provider"]
-            self.enabled = self.schema["enabled"]
-            self.azure_tenant_id = self.schema["azure_tenant_id"]
-            self.integration_type = self.schema["integration_type"]
-            self.storage_allowed_locations = self.schema["storage_allowed_locations"]
             
-
-    def build_create_fileformat(self) -> str:
-        return f"""
-                CREATE OR REPLACE file format {self.file_format} \n
-                TYPE = {self.file_type} \n
-                FIELD_DELIMITER = {self.delimiter} \n
-                SKIP_HEADER = {self.skip_header};"""
-        
 
     def build_create_stage(self) -> str:
         return f"""
@@ -33,19 +17,9 @@ class StageCreator:
                 URL = {self.stage_url} \n
                 FILE_FORMAT = {self.file_format};"""
                 
-    def build_create_storage_integration(self) -> str:
-        return f"""
-                CREATE OR REPLACE STORAGE INTEGRATION {self.integration_name} \n
-                TYPE = {self.integration_type} \n
-                STORAGE_PROVIDER = {self.storage_provider} \n
-                ENABLED = {self.enabled} \n
-                AZURE_TENANT_ID = {self.azure_tenant_id} \n 
-                STORAGE_ALLOWED_LOCATIONS = {self.storage_allowed_locations};"""
-                
-                  
         
     def create_stage(self, cursor):
-        sql = self.build_create_storage_integration()
+        sql = self.build_create_stage()
         print("Executing SQL:\n", sql)
         cursor.execute(sql)
         print(f" Stage '{self.stage_name}' created successfully.")

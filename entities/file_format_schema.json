@@ -1,0 +1,6 @@
+{
+  "file_format": "fileformat_azure",
+  "file_type": "CSV",
+  "delimiter": "','",
+  "skip_header": "1"
+}
