@@ -8,9 +8,13 @@ class TableCreator:
             self.schema_name = self.schema["schema_name"]
             self.columns = self.schema["columns"]
 
-    def build_create_sql(self) -> str:
+    def create_stg_table_fnc(self) -> str:
         cols = ",\n  ".join([f"{col} {dtype}" for col, dtype in self.columns.items()])
-        return f"CREATE OR REPLACE TABLE {self.table_name} (\n  {cols}\n);"
+        return f"CREATE OR REPLACE TABLE STG_{self.table_name} (\n  {cols}\n);"
+
+    def copy_into_fnc(self) -> str:
+        cols = ",\n  ".join([f"{col} {dtype}" for col, dtype in self.columns.items()])
+        return f"CREATE OR REPLACE TABLE STG_{self.table_name} (\n  {cols}\n);"
 
     def create_table(self, cursor):
         sql = self.build_create_sql()

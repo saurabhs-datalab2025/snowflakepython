@@ -9,8 +9,10 @@ from snowflake_etl.table_creator import TableCreator
 
 
 
+if len(sys.argv) < 2:
+    print("Usage: python create_table.py schemas/table_schema.json")
+    sys.exit(1)
 
-entity_type = sys.argv[0]
 schema_path = sys.argv[1]
 config_path = "configs/snowflake_config.json"
 
@@ -18,21 +20,35 @@ if not os.path.exists(schema_path):
     print(f"❌ Schema file not found: {schema_path}")
     sys.exit(1)
 
+
 # Connect to Snowflake
 sf = SnowflakeConnector(config_path)
 conn = sf.connect()
 cur = conn.cursor()
 
+#argument for entity types
+arg = schema_path.lower()
 
-if "table" in entity_type.lower():
+
+# Keyword-based routing
+if "table" in arg:
     creator = TableCreator(schema_path)
     creator.create_table(cur)
-if "storage_integration" in entity_type.lower():
+elif "file_format" in arg:
+    creator = FileFormatCreator(schema_path)
+    creator.create_fileformat(cur)
+elif "stage" in arg:
     creator = StageCreator(schema_path)
     creator.create_stage(cur)
-if "file_format" in entity_type.lower():
-    creator = StageCreator(schema_path)
-    creator.create_stage(cur)
+elif "storage" in arg:
+    creator = StorageIntegrationCreator(schema_path)
+    creator.create_storage_integration(cur)
+else:
+    print(f"No matching function for argument: {arg}")
+
+
+
+
 
 # Clean up
 cur.close()
