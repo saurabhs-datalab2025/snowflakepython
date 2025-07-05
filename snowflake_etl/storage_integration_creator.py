@@ -1,6 +1,6 @@
 import json
 
-class StageCreator:
+class StorageIntegrationCreator:
     def __init__(self, schema_path: str):
         with open(schema_path, "r") as f:
             self.schema = json.load(f)
@@ -23,7 +23,7 @@ class StageCreator:
                 
                   
         
-    def create_stage(self, cursor):
+    def create_storage_integration(self, cursor):
         sql = self.build_create_storage_integration()
         print("Executing SQL:\n", sql)
         cursor.execute(sql)

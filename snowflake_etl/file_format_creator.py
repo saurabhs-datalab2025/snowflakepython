@@ -1,6 +1,6 @@
 import json
 
-class StageCreator:
+class FileFormatCreator:
     def __init__(self, schema_path: str):
         with open(schema_path, "r") as f:
             self.schema = json.load(f)
@@ -18,7 +18,7 @@ class StageCreator:
                 SKIP_HEADER = {self.skip_header};"""
         
 
-    def create_stage(self, cursor):
+    def create_fileformat(self, cursor):
         sql = self.build_create_fileformat()
         print("Executing SQL:\n", sql)
         cursor.execute(sql)
