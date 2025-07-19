@@ -1,9 +1,8 @@
 {
   "user": "user1",
   "account": "splftvy-sm60395",
-  "warehouse": "saurabhswarehouse",
+  "warehouse": "SAURABHSWAREHOUSE",
   "database": "saurabhsdb",
   "schema": "goldschema",
   "private_key_path": "/Users/saurabhsakpal2025/.snowflake_keys/rsa_key.p8"
 }
-

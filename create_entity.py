@@ -46,10 +46,6 @@ elif "storage" in arg:
 else:
     print(f"No matching function for argument: {arg}")
 
-
-
-
-
 # Clean up
 cur.close()
 sf.close()

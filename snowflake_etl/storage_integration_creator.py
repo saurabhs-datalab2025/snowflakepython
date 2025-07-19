@@ -27,4 +27,4 @@ class StorageIntegrationCreator:
         sql = self.build_create_storage_integration()
         print("Executing SQL:\n", sql)
         cursor.execute(sql)
-        print(f" Stage '{self.stage_name}' created successfully.")
+        print(f" Stage '{self.integration_name}' created successfully.")

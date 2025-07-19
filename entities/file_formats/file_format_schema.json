@@ -1,5 +1,5 @@
 {
-  "file_format": "fileformat_azure",
+  "file_format": "fileformat_azure_19july",
   "file_type": "CSV",
   "delimiter": "','",
   "skip_header": "1"

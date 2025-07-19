@@ -17,7 +17,7 @@ class StageCreator:
                 URL = {self.stage_url} \n
                 FILE_FORMAT = {self.file_format};"""
                 
-        
+    
     def create_stage(self, cursor):
         sql = self.build_create_stage()
         print("Executing SQL:\n", sql)
