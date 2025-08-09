@@ -1,0 +1,24 @@
+import json
+
+class TableCreator:
+    def __init__(self, schema_path: str):
+        with open(schema_path, "r") as f:
+            self.schema = json.load(f)
+            self.table_name = self.schema["table_name"]
+            self.schema_name = self.schema["schema_name"]
+            self.stage_name = self.schema["stage_name"]
+            self.file_format = self.schema["file_format"]
+            self.columns = self.schema["columns"]
+
+
+
+    def create_stg_table_fnc(self) -> str:
+        cols = ",\n  ".join([f"{col} {dtype}" for col, dtype in self.columns.items()])
+        return f"CREATE OR REPLACE TABLE STG_{self.table_name} (\n  {cols}\n);"
+
+
+    def create_table(self, cursor):
+        sql = self.build_create_sql()
+        print("Executing SQL:\n", sql)
+        cursor.execute(sql)
+        print(f"✅ Table '{self.table_name}' created successfully.")

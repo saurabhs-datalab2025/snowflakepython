@@ -1,7 +1,9 @@
 {
-  "table_name": "tablejune14",
+  "table_name": "table21july",
   "database_name": "",
   "schema_name": "goldschema",
+  "stage_name": "my_azure_stage_19july",
+  "file_format": "fileformat_azure_19july",
   "columns": {
     "employee_id": "INT",
     "first_name": "STRING",
