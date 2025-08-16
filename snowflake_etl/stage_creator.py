@@ -8,10 +8,6 @@ class StageCreator:
             self.integration_name = self.schema["integration_name"]
             self.stage_url = self.schema["stage_url"]
             self.file_format = self.schema["file_format"]
-<<<<<<< HEAD
-=======
-            
->>>>>>> feature_create_stage
 
     def build_create_stage(self) -> str:
         return f"""
@@ -19,13 +15,7 @@ class StageCreator:
                 STORAGE_INTEGRATION = {self.integration_name} \n
                 URL = {self.stage_url} \n
                 FILE_FORMAT = {self.file_format};"""
-<<<<<<< HEAD
-        
-        
-=======
                 
-    
->>>>>>> feature_create_stage
     def create_stage(self, cursor):
         sql = self.build_create_stage()
         print("Executing SQL:\n", sql)
